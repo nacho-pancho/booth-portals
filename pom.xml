@@ -4,7 +4,7 @@
  
   <groupId>net.ddns.gongorg</groupId>
   <artifactId>BoothPortals</artifactId>
-  <version>0.0</version>
+  <version>0.1</version>
   <packaging>jar</packaging>
   
   <name>BoothPortals for Bukkit</name>
