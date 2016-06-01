@@ -1,0 +1,6 @@
+name: BoothPortals
+main: net.ddns.gongorg.BoothPortals
+version: 0.2
+commands: 
+  booth:
+    description: Main command. Type as is for help
