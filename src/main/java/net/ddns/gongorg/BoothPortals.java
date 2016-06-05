@@ -29,7 +29,7 @@ public class BoothPortals extends org.bukkit.plugin.java.JavaPlugin {
     private String pluginVersion;
     private ResourceBundle i18nResource;
 
-    private final Material boothMaterial = Material.REDSTONE_BLOCK;
+    private Material boothMaterial = Material.REDSTONE_BLOCK;
     TreeMap<String,Portal> portals = new TreeMap<String,Portal>();
     Storage storage;
 
@@ -52,6 +52,12 @@ public class BoothPortals extends org.bukkit.plugin.java.JavaPlugin {
         log.info("Locale set to " + language + " " + country);
         final Locale locale = new Locale(language, country);
         i18nResource = ResourceBundle.getBundle("Messages", locale);
+		String materialName = conf.getString("booth_material","QUARTZ_BLOCK");
+		boothMaterial = Material.getMaterial(materialName);
+		if (boothMaterial == null) {
+	    	boothMaterial = Material.QUARTZ_BLOCK;
+		}
+	this.log.debug("Booth material is " + boothMaterial);
     }
 
     public void onEnable() {

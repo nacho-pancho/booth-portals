@@ -100,7 +100,7 @@ final class Storage {
                 Location door;
                 String name;
 
-                StringTokenizer tokenizer = new StringTokenizer(line, ", ");
+                StringTokenizer tokenizer = new StringTokenizer(line, ",");
                 String tok;
                 java.util.UUID w;
                 double x, y, z;

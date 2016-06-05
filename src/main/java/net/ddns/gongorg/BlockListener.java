@@ -163,6 +163,7 @@ public class BlockListener implements org.bukkit.event.Listener {
         //
         // check for columns
         //
+	plugin.log.debug("Found potential portal named \"" + signName + "\"");
         if (    plugin.isBooth(world.getBlockAt(cx+1,cy  ,cz+1)) &&
                 plugin.isBooth(world.getBlockAt(cx+1,cy  ,cz-1)) &&
                 plugin.isBooth(world.getBlockAt(cx-1,cy  ,cz+1)) &&
@@ -175,7 +176,9 @@ public class BlockListener implements org.bukkit.event.Listener {
             double tmp = 0.03125; // a little off centering so that so that roundings go towards correct place
             plugin.addPortal(signName,new Location(world, cx + 0.5 - tmp, cy+ tmp, cz + 0.5-tmp),
                     new Location(world, dx, dy, dz));
-        }
+        } else {
+	    plugin.log.debug("Portal structure not complete.");
+	}
     }
 
 }
